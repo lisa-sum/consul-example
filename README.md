@@ -44,5 +44,11 @@
 
 2. run test
     ```shell
-    go mod tidy
+    go run consul_test.go
     ```
+3. run main
+    ```shell
+    go run main.go
+    ```
+4. check consul
+visited link http://localhost:8080/health to check consul health if you can see the network status code is 200 then consul is ok
