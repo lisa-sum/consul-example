@@ -13,6 +13,7 @@
     vi /home/data/consul/consul.d/consul.hcl
    ```
    
+this is a cluster example:
    ```
     # /home/data/consul/consul.d/consul.hcl
     data_dir = "/tmp/consul" # 本地数据存储目录
