@@ -9,8 +9,11 @@ Divided into binary installation and image installation, you can choose any way 
 1. click [hashicorp](https://developer.hashicorp.com/consul/downloads) to download your os consul package
 2. unzip consul
 > if you use linux os you can use this command to unzip consul
+> 
 > Apt package manager: apt install unzip -y
+> 
 > Yum package manager: yum install unzip -y
+> 
 > Dnf package manager: dnf install unzip -y
 
 ```shell
@@ -57,7 +60,7 @@ docker-compose up -d
 
 ### Cluster
 An example: a cluster of 3 servers with UI enabled
-check [consul-server-node1.hcl](./consul.d/consul-server-node1.hcl), [consul-server-node2.hcl](./consul.d/consul-server-node2.hcl), [consul-server-node3.hcl](./consul.d/consul-server-node3.hcl) for more details
+check [consul-server-node1.hcl](./consul-server-node1.hcl), [consul-server-node2.hcl](./consul-server-node2.hcl), [consul-server-node3.hcl](./consul-server-node3.hcl) for more details
 你需要根据你的实际情况来修改`consul-server-node{1,2,3}.hcl`的文件内容, 文件的字段说明如下:
 > 根据你的需要, 参阅[官方文档](https://developer.hashicorp.com/consul/docs/agent/config/config-files#ui-parameters)配置文件, 根据你的实际需求来添加修改
 
@@ -95,7 +98,10 @@ server node3:
 nohup consul agent -config-file=/home/data/consul/consul.d/consul-server-node3.hcl &
 ```
 
-Or 你可能更喜欢命令行的方式:
+OR
+
+你可能更喜欢命令行的方式:
+
 server node1:
 ```shell
 consul agent -server -bootstrap-expect 3 -data-dir /tmp/consul -node=node_158 -bind=192.168.0.158 -rejoin -config-dir=/home/data/consul/consul.d/ -client 0.0.0.0
